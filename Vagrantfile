@@ -3,11 +3,10 @@
 
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
- config.vm.box = "ubuntu/trusty64" 
- config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+ config.vm.box = "bento/ubuntu-16.04" 
 
   config.vm.define "control" do |control|
-    config.vm.box = "ubuntu/xenial64"
+    control.vm.box = "bento/ubuntu-16.04"
     control.vm.network :public_network, bridge: "wlp2s0", ip: "192.168.0.110"
   end
 
